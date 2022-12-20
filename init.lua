@@ -1,5 +1,9 @@
 require("elis.plugins-setup")
+require("elis.plugins.comment")
+require("elis.plugins.nvim-tree")
+require("elis.plugins.lualine")
+require("elis.plugins.telescope")
+require("elis.plugins.nvim-cmp")
 require("elis.core.options")
 require("elis.core.keymaps")
 require("elis.core.colorscheme")
-

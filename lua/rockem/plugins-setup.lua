@@ -76,6 +76,8 @@ return packer.startup(function(use)
   -- configuring lsp servers
   use("neovim/nvim-lspconfig")
 
+  -- git signs
+  use("lewis6991/gitsigns.nvim")
 
     if packer_bootstrap then 
         require("packer").sync()

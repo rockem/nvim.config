@@ -8,8 +8,8 @@ local lualine_nightfly = require("lualine.themes.nightfly")
 
 local new_colors = {
     blue = "#65D1FF",
-    green = "#3EFFDC",
-    violet = "#FF61EF",
+    green = "#00cca7",
+    violet = "#c966ff",
     yellow = "#FFDA7B",
     black = "#000000",
 }

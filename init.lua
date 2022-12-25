@@ -1,5 +1,5 @@
-function get_conf_filenames()
-    local lua_files = vim.fn.system("ls -R ~/.config/nvim/lua/**/*.lua")
+function get_conf_filenames(folder)
+    local lua_files = vim.fn.system("ls -R ~/.config/nvim/lua/*/" .. folder .. "/*.lua")
     local names = {}
     for filename in lua_files:gmatch("[^\r\n]+") do
         file_path, num = filename:gsub("^.*/lua/(.*)$", "%1")
@@ -16,6 +16,8 @@ function require_files(files)
   end
 end
 
-require_files(get_conf_filenames())
+require("rockem.plugins-setup")
+require_files(get_conf_filenames("core"))
+require_files(get_conf_filenames("plugins"))
 
 print("Happy hacking!")

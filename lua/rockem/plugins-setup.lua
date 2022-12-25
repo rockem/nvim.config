@@ -31,7 +31,9 @@ return packer.startup(function(use)
 
     use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
+    -- Themes
     use("bluz71/vim-nightfly-guicolors")
+    use "EdenEast/nightfox.nvim"
 
     -- Navigating inside and outside of Vim
     use("christoomey/vim-tmux-navigator")
@@ -57,6 +59,7 @@ return packer.startup(function(use)
     -- fuzzy finding w/ telescope
     use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
     use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder 
+    use("nvim-telescope/telescope-file-browser.nvim")
 
     -- auto completion
     -- autocompletion

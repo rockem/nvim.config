@@ -25,3 +25,5 @@ keymap.set("n", "<leader>fg", "<cmd>Telescope grep_string<cr>") -- find string u
 keymap.set("n", "<leader>fl", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
 
+-- fugitive
+keymap.set("n", "<leader>gs", "<cmd>Git<cr>") -- Git status

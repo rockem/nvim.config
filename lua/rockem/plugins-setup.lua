@@ -14,10 +14,10 @@ local packer_bootstrap = ensure_packer() -- true if packer was just installed
 -- autocommand that reloads neovim and installs/updates/removes plugins
 -- when file is saved
 vim.cmd([[ 
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
-  augroup end
+augroup packer_user_config
+autocmd!
+autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
+augroup end
 ]])
 
 -- import packer safely
@@ -27,42 +27,42 @@ if not status then
 end
 
 return packer.startup(function(use)
-    use("wbthomason/packer.nvim")
+  use("wbthomason/packer.nvim")
 
-    use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
+  use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
-    -- Themes
-    use("bluz71/vim-nightfly-guicolors")
-    use "EdenEast/nightfox.nvim"
+  -- Themes
+  use("bluz71/vim-nightfly-guicolors")
+  use "EdenEast/nightfox.nvim"
 
-    -- Navigating inside and outside of Vim
-    use("christoomey/vim-tmux-navigator")
+  -- Navigating inside and outside of Vim
+  use("christoomey/vim-tmux-navigator")
 
-    -- Maximize and restores current window
-    use("szw/vim-maximizer")
+  -- Maximize and restores current window
+  use("szw/vim-maximizer")
 
-    use("tpope/vim-surround")
-    use("vim-scripts/ReplaceWithRegister")
+  use("tpope/vim-surround")
+  use("vim-scripts/ReplaceWithRegister")
 
-    -- Comment with gc
-    use("numToStr/Comment.nvim")
+  -- Comment with gc
+  use("numToStr/Comment.nvim")
 
-    -- file explorer
-    use("nvim-tree/nvim-tree.lua")
+  -- file explorer
+  use("nvim-tree/nvim-tree.lua")
 
-    -- File icons
-    use("kyazdani42/nvim-web-devicons")
+  -- File icons
+  use("kyazdani42/nvim-web-devicons")
 
-    -- mode line
-    use("nvim-lualine/lualine.nvim")
+  -- mode line
+  use("nvim-lualine/lualine.nvim")
 
-    -- fuzzy finding w/ telescope
-    use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
-    use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder 
-    use("nvim-telescope/telescope-file-browser.nvim")
+  -- fuzzy finding w/ telescope
+  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
+  use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder 
+  use("nvim-telescope/telescope-file-browser.nvim")
 
-    -- auto completion
-    -- autocompletion
+  -- auto completion
+  -- autocompletion
   use("hrsh7th/nvim-cmp") -- completion plugin
   use("hrsh7th/cmp-buffer") -- source for text in buffer
   use("hrsh7th/cmp-path") -- source for file system paths
@@ -72,6 +72,10 @@ return packer.startup(function(use)
   use("saadparwaiz1/cmp_luasnip") -- for autocompletion
   use("rafamadriz/friendly-snippets") -- useful snippets
 
+  -- Tree sitter
+  use("nvim-treesitter/nvim-treesitter", {run = ":TSUpdate"})
+
+  -- LSP
   -- managing & installing lsp servers
   use("williamboman/mason.nvim")
   use("williamboman/mason-lspconfig.nvim")
@@ -79,10 +83,18 @@ return packer.startup(function(use)
   -- configuring lsp servers
   use("neovim/nvim-lspconfig")
 
-  -- git signs
-  use("lewis6991/gitsigns.nvim")
 
-    if packer_bootstrap then 
-        require("packer").sync()
-    end
+  -- Git
+  use("lewis6991/gitsigns.nvim")
+  use("tpope/vim-fugitive")
+
+  -- Clojure
+  use 'Olical/conjure'
+  use 'tpope/vim-dispatch'
+  use 'radenling/vim-dispatch-neovim'
+  use 'clojure-vim/vim-jack-in'
+
+  if packer_bootstrap then 
+    require("packer").sync()
+  end
 end)

@@ -27,3 +27,6 @@ keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available 
 
 -- fugitive
 keymap.set("n", "<leader>gs", "<cmd>Git<cr>") -- Git status
+keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- Git status
+keymap.set("n", "<leader>gf", "<cmd>Telescope git_bcommits<cr>") -- Git status
+

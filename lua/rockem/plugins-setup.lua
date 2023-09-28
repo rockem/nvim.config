@@ -62,7 +62,6 @@ return packer.startup(function(use)
   use("nvim-telescope/telescope-file-browser.nvim")
 
   -- auto completion
-  -- autocompletion
   use("hrsh7th/nvim-cmp") -- completion plugin
   use("hrsh7th/cmp-buffer") -- source for text in buffer
   use("hrsh7th/cmp-path") -- source for file system paths
@@ -83,17 +82,16 @@ return packer.startup(function(use)
   -- configuring lsp servers
   use("neovim/nvim-lspconfig")
 
-
   -- Git
   use("lewis6991/gitsigns.nvim")
   use("tpope/vim-fugitive")
-  use("kdheepak/lazygit.nvim")
+  -- use("kdheepak/lazygit.nvim")
 
   -- Clojure
-  use 'Olical/conjure'
-  use 'tpope/vim-dispatch'
-  use 'radenling/vim-dispatch-neovim'
-  use 'clojure-vim/vim-jack-in'
+  -- use 'Olical/conjure'
+  -- use 'tpope/vim-dispatch'
+  -- use 'radenling/vim-dispatch-neovim'
+  -- use 'clojure-vim/vim-jack-in'
 
   if packer_bootstrap then 
     require("packer").sync()

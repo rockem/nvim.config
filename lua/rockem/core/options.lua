@@ -34,4 +34,6 @@ opt.splitbelow = true
 
 opt.iskeyword:append("-")
 
-
+-- Completion
+opt.wildmode = "longest,list,full"
+opt.wildmenu = true

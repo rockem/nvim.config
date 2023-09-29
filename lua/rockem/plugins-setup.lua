@@ -82,6 +82,9 @@ return packer.startup(function(use)
   -- configuring lsp servers
   use("neovim/nvim-lspconfig")
 
+  -- Rust
+  use("simrat39/rust-tools.nvim")
+
   -- Git
   use("lewis6991/gitsigns.nvim")
   use("tpope/vim-fugitive")
